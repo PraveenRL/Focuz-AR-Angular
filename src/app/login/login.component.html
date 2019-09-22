@@ -1,0 +1,39 @@
+<div class="signupbodyBg">
+        <div class='bgWhite'></div>
+
+<form>
+    <div class="formSection center">
+        <div class='container'>
+            <div class='row'>
+                <div class='col-md-1'></div>
+                <div class='col-md-10 col-sm-12'>
+                    <h4 class='text-center p1'>Hey<br>let's get started</h4>
+                        <div class='form-group'>
+                            <input class='form-control' id='hold' type='email' required>
+                            <label class="form-control-placeholder" for="hold">Email</label>
+                        </div>
+                        <div class='form-group'>
+                            <input class='form-control' type='password' id='hold' required>
+                            <label class="form-control-placeholder" for="hold">Password</label>
+                            <p class='float-right text-info fp'><a routerLink='/resetpassword'>Forgot Password?</a></p>
+                        </div>
+                </div>
+                <div class='col-md-1'></div>
+            </div>
+        </div>
+        <div class='text-center my-3 '>
+                <a class='btn btn1' routerLink='/selected'>Login</a>
+            </div>
+            <div class='text-center my-3'>
+                <h6 class='font-weight-bold'>Not a registered user?
+                    <a routerLink='/register'>Register Now!</a>
+                </h6>
+            </div>
+            <div class='text-center mb-5 '>
+                <h5><a class='text-secondary' routerLink='/register'>Back</a></h5>
+            </div>
+    </div>
+</form>
+    
+</div>
+<router-outlet></router-outlet>

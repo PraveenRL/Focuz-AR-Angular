@@ -1,0 +1,78 @@
+<div class="signupbodyBg">
+        <div class='bgWhite'></div>
+
+    <div class="formSection center">
+        <div class='formSection-title'>
+            <h4 class='text-center p1'>Welcome to your<br>
+                Personal wedding consultant!</h4>
+        </div>
+        <div class="container">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+                <div class="row">
+                    <div class="col-6">
+                        <input type="text" formControlName="firstName" placeholder="FirstName" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <input type="text" formControlName="lastName" placeholder="LastName" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+
+                    <div class="col-3">
+                        <input type='text' formControlName="countryCode" placeholder="Country Code"
+                            class="form-control">
+                    </div>
+                    <div class='col-9'>
+                        <input type="number" formControlName="phone" placeholder="Phone" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                            <div *ngIf="f.phone.errors.required">Enter your Contact Number</div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <input type="text" formControlName="email" class="form-control" placeholder="Email"
+                            [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div>
+                    <div class='col-6'>
+                        <input type="password" formControlName="password" placeholder="Password" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Enter a strong password</div>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+
+                <div class="text-center">
+                    <button class="btn sub btn1">Submit</button>
+                </div>
+                <div class='text-center my-5'>
+                        <h6 class='font-weight-bold text-secondary'>Already a member?
+                            <a routerLink='/login'>LOG IN</a>
+                        </h6>
+                    </div>
+            </form>
+
+        </div>
+    </div>
+   
+</div>
+<router-outlet></router-outlet>
